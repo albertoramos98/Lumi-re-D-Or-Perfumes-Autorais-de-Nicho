@@ -16,13 +16,13 @@ function Philosophy() {
           <span className="section-tagline">Nossa Filosofia</span>
           <h2 className="section-title">A Arte do Perfume Autoral</h2>
           <blockquote className="narrative-quote">
-            "O perfume de nicho não imita. Ele evoca. Ele eterniza. É a tradução líquida de quem você é."
+            "O perfume artesanal é a alquimia da memória. Ele evoca, traduz e eterniza as maiores assinaturas olfativas do mundo sob uma perspectiva íntima e exclusiva."
           </blockquote>
           <p className="narrative-text">
-            Na Lumière D'Or, rejeitamos atalhos comerciais e a pasteurização da perfumaria industrial. Acreditamos que o seu perfume deve ser uma extensão íntima da sua própria identidade, não um produto copiado em massa.
+            Na Lumière D'Or, unimos a sofisticação das estruturas olfativas mais aclamadas do mundo à pureza do trabalho inteiramente feito à mão. Acreditamos que a perfumaria fina deve ser uma experiência rica e acessível, servindo como uma extensão viva de sua identidade em cada detalhe.
           </p>
           <p className="narrative-text">
-            Nossos blends contêm óleos essenciais puros selecionados em pequenos produtores familiares ao redor do mundo. Cada lote é maturado e macerado lentamente em nosso atelier, permitindo que as notas olfativas se fundam de maneira orgânica, garantindo rastro elegante e fixação excepcional superior a 12 horas.
+            Nossos blends são elaborados com óleos essenciais selecionados e acordes importados de altíssima fidelidade. Cada lote passa por um rigoroso processo de maturação e maceração lenta em nosso atelier, permitindo que as notas alcancem sua máxima evolução na pele, garantindo um rastro elegante e uma fixação excepcional superior a 12 horas.
           </p>
           <div style={{ marginTop: '1.5rem' }}>
             <button className="btn-luxury" onClick={handleExperienceClick} id="btn-narrative-experience">
