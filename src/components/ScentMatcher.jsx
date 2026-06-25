@@ -7,30 +7,26 @@ function ScentMatcher({ products, onExplore }) {
 
   // Re-calculate match whenever family, intensity, or products array changes
   useEffect(() => {
-    if (!products || products.length === 0) {
-      setMatchedProduct(null);
-      return;
-    }
-
-    // 1. Filter by family first
-    const familyMatches = products.filter(p => p.family === selectedFamily);
-
+    // Smart Alchemical Matching Logic
     let match = null;
 
-    if (familyMatches.length > 0) {
-      // Find the family match with the closest intensity
-      match = familyMatches.reduce((prev, curr) => {
-        const prevDiff = Math.abs(prev.intensity - intensity);
-        const currDiff = Math.abs(curr.intensity - intensity);
-        return currDiff < prevDiff ? curr : prev;
-      });
-    } else {
-      // Fallback: find the absolute closest intensity across all products
-      match = products.reduce((prev, curr) => {
-        const prevDiff = Math.abs(prev.intensity - intensity);
-        const currDiff = Math.abs(curr.intensity - intensity);
-        return currDiff < prevDiff ? curr : prev;
-      });
+    if (selectedFamily === 'woody') {
+      // Amadeirada & Especiada -> Oud Impérial (deep wood, tobacco, oud)
+      match = products.find(p => p.id === 'oud');
+    } else if (selectedFamily === 'oriental') {
+      // Ambarada & Resinosa -> Lumière d'Or (amber, warm vanilla, sweet resin)
+      match = products.find(p => p.id === 'lumiere');
+    } else if (selectedFamily === 'floral') {
+      // Floral Aveludada -> Rose de Nuit (velvet Grasse rose, patchouli)
+      match = products.find(p => p.id === 'rose');
+    } else if (selectedFamily === 'fresh') {
+      // Cítrica Solar -> Lumière d'Or (vibrant Italian bergamot opening and solar vibe)
+      match = products.find(p => p.id === 'lumiere');
+    }
+
+    // Fallback if products are edited or not found
+    if (!match && products && products.length > 0) {
+      match = products[0];
     }
 
     setMatchedProduct(match);
