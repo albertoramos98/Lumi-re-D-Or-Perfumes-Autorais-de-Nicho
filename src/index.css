@@ -1867,3 +1867,434 @@ footer {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================================================
+   PRE-LAUNCH WIDGETS (COUNTDOWN, SIZE SELECTORS & WHATSAPP INTEGRATION)
+   ========================================================================== */
+
+.countdown-widget {
+  margin: 2rem 0 2.5rem 0;
+  width: 100%;
+  max-width: 480px;
+  animation: fadeIn 1s ease-out;
+}
+
+.countdown-legend {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--border-gold);
+  padding: 1.25rem 1.75rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.countdown-number {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.countdown-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.countdown-divider {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--gold-dark);
+  margin-bottom: 0.5rem;
+  animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; text-shadow: 0 0 8px var(--gold-primary); }
+  100% { opacity: 0.4; }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bg-absolute);
+  background: var(--gold-gradient);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+}
+
+.btn-whatsapp-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  background: var(--gold-champagne);
+}
+
+/* Drawer Size Selector Styles */
+.drawer-sizes-selector {
+  margin: 2.5rem 0 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 2rem;
+}
+
+.drawer-sizes-selector .selector-label {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.sizes-btn-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.size-opt-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: rgba(10, 10, 10, 0.5);
+  border: 1px solid var(--border-gold);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.size-opt-btn:hover {
+  border-color: var(--border-gold-hover);
+  color: var(--text-primary);
+}
+
+.size-opt-btn.active {
+  border-color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--gold-champagne);
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.size-price-notice {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Responsive updates */
+@media (max-width: 480px) {
+  .countdown-timer {
+    padding: 1rem;
+  }
+  .countdown-item {
+    min-width: 45px;
+  }
+  .countdown-number {
+    font-size: 1.7rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-buttons .btn-luxury,
+  .hero-buttons .btn-whatsapp-hero {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE FIRST & RESPONSIVE LAYOUT UPDATES (STOREFRONT)
+   ========================================================================== */
+
+/* Navigation Menu Responsive Override */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex !important;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: rgba(5, 5, 5, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    transition: var(--transition-smooth);
+    border-top: 1px solid var(--border-gold);
+    z-index: 999;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  header.scrolled .nav-menu {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+  
+  .nav-actions .btn-luxury {
+    display: none; /* Hide header CTA button on mobile to save space */
+  }
+}
+
+/* Tablet & Mobile Layouts (Screens under 1024px) */
+@media (max-width: 1024px) {
+  /* Container padding adjustments */
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  /* Hero Grid */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .countdown-widget {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    order: -1; /* Perfume image on top for better mobile visual hierarchy */
+    margin-bottom: 1rem;
+  }
+
+  .hero-image {
+    max-height: 45vh;
+  }
+
+  /* Textures Asymmetric Grid */
+  .textures-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 1.5rem;
+  }
+
+  .grid-item, 
+  .item-text-1, 
+  .item-img-glass, 
+  .item-img-tonka, 
+  .item-img-rose {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    height: 350px;
+  }
+
+  .item-text-1 {
+    height: auto;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .text-item-title {
+    font-size: 1.8rem;
+  }
+
+  /* Products Collection Grid */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  /* Brand Philosophy Narrative */
+  .narrative-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .narrative-content {
+    align-items: center;
+  }
+
+  .narrative-quote {
+    font-size: 1.3rem;
+  }
+
+  /* Scent Matcher */
+  .matcher-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .matcher-container {
+    padding: 3rem 2rem;
+  }
+
+  .matcher-result {
+    border-left: none;
+    border-top: 1px solid var(--border-dark);
+    padding-left: 0;
+    padding-top: 3rem;
+    min-height: auto;
+  }
+  
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* Smartphone Layouts (Screens under 768px) */
+@media (max-width: 768px) {
+  /* Typography scales */
+  html {
+    font-size: 15px;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Products Collection Grid */
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 2rem auto 0 auto;
+  }
+
+  .product-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .product-image-container {
+    height: 280px;
+  }
+
+  /* Family buttons in Scent Matcher */
+  .family-buttons {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .family-btn {
+    padding: 1rem;
+  }
+
+  /* Drawer panel padding */
+  .drawer-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .drawer-title {
+    font-size: 1.8rem;
+  }
+
+  .drawer-texture-panel {
+    flex-direction: column;
+  }
+
+  .drawer-texture-img {
+    width: 100%;
+    height: 180px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-gold);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .footer-brand, .footer-newsletter {
+    align-items: center;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-link {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
