@@ -41,17 +41,18 @@ function Catalog({ products, onExplore }) {
                   <h3 className="product-title">{product.title}</h3>
                   <p className="product-excerpt">{product.excerpt}</p>
                   
-                  <div className="product-actions">
-                    <span className="product-price">
-                      {typeof product.price === 'number' 
-                        ? `R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` 
-                        : product.price
-                      }
-                    </span>
+                  {/* Sizes Specification */}
+                  <div className="product-sizes-spec" style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{ color: 'var(--gold-primary)', fontSize: '0.8rem' }}>✦</span>
+                    <span>Disponível em 50 ml & 100 ml</span>
+                  </div>
+                  
+                  <div className="product-actions" style={{ justifyContent: 'center' }}>
                     <button 
                       className="btn-minimal btn-explore-perfume" 
                       onClick={() => onExplore(product.id)}
                       id={`btn-explore-${product.id}`}
+                      style={{ width: '100%', textAlign: 'center' }}
                     >
                       Explorar Perfil Olfativo
                     </button>
